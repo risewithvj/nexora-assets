@@ -1,0 +1,186 @@
+/*
+ * Nexora Theme - Custom Styles v2.0 - Orange Edition
+ * CDN: https://cdn.jsdelivr.net/gh/YOUR_USERNAME/nexora-assets@main/css/nexora-custom.css
+ */
+
+/* =====================================================
+   NEXORA EXCLUSIVE STYLES — by Vijaya Kumar L
+   Features: Reading Progress Bar, Smooth Reveals,
+   Gradient Accent Tags, Custom Scrollbar, Focus Rings,
+   Skip Navigation, Reading Time badge
+   ===================================================== */
+
+/* Reading Progress Bar — top of viewport — Orange */
+#nexora-progress{position:fixed;top:0;left:0;width:0%;height:4px;background:linear-gradient(90deg,#F4511E,#FF7043,#FF8C42);z-index:9999;transition:width .1s linear;border-radius:0 2px 2px 0;box-shadow:0 1px 6px rgba(244,81,30,.5)}
+
+/* Skip to content link (accessibility + SEO) */
+.skip-to-content{position:fixed;top:-100px;left:20px;z-index:10000;background:var(--themeC);color:#fff;padding:10px 20px;border-radius:8px;font-size:14px;font-weight:600;transition:top .2s ease;text-decoration:none}
+.skip-to-content:focus{top:10px}
+
+/* Estimated Reading Time badge */
+.nxReadTime{display:inline-flex;align-items:center;gap:5px;font-size:12px;opacity:.7;background:var(--transB);padding:3px 10px;border-radius:20px;margin-left:8px;white-space:nowrap}
+.nxReadTime::before{content:'';display:inline-block;width:12px;height:12px;background:url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='10'/><polyline points='12 6 12 12 16 14'/></svg>") center/12px no-repeat}
+
+/* Gradient label/category chips */
+.pLbls.nxChip a{background:linear-gradient(135deg,#F4511E,#FF7043);color:#fff;padding:3px 12px;border-radius:20px;font-size:12px;font-weight:500;display:inline-block;margin:0 3px 4px 0}
+.pLbls.nxChip a:hover{opacity:.85;text-decoration:none}
+
+/* Smooth card hover lift (all post cards) */
+.onIndx .blogPts > article{transition:transform .22s cubic-bezier(.34,1.56,.64,1), box-shadow .22s ease !important}
+.onIndx .blogPts > article:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.12) !important}
+
+/* Orange gradient header accent line */
+header::after{content:'';display:block;position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#F4511E,#FF7043,#FFAB40,#FF7043,#F4511E);background-size:200%;animation:nxAuroraShift 6s linear infinite;opacity:.9}
+@keyframes nxAuroraShift{0%{background-position:0%}100%{background-position:200%}}
+
+/* Scroll reveal animation (fade-up) */
+.nxReveal{opacity:0;transform:translateY(20px);transition:opacity .5s ease,transform .5s ease}
+.nxReveal.nxVisible{opacity:1;transform:translateY(0)}
+
+/* Reading mode — wider post content, max readability */
+.nxReadMode .blogCont .pEnt{max-width:680px;margin-left:auto;margin-right:auto;font-size:17px;line-height:1.9em}
+
+/* Better focus rings (accessibility) */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--themeC);outline-offset:3px;border-radius:3px}
+
+/* Nexora post thumbnail gradient overlay on hover */
+.pThmb .thmb::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.35));opacity:0;transition:opacity .3s ease;border-radius:5px}
+.pThmb:hover .thmb::after{opacity:1}
+
+/* Sidebar widget entry lines */
+.sidebar .widget{border-left:3px solid transparent;padding-left:12px;transition:border-color .2s ease}
+.sidebar .widget:hover{border-color:var(--themeC)}
+
+/* Nexora custom scrollbar */
+::-webkit-scrollbar{width:6px;height:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,#F4511E,#FF7043);border-radius:10px}
+::-webkit-scrollbar-thumb:hover{opacity:.8}
+
+/* Table of contents — Nexora Orange style */
+details.toc{background:linear-gradient(135deg,#FFF5F0,#FFF0EB);border:1px solid rgba(244,81,30,.2);border-radius:12px;padding:16px 20px;margin:2em 0}
+details.toc summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#F4511E}
+details.toc summary::after{content:'▼';font-size:11px;transition:transform .2s}
+details.toc[open] summary::after{transform:rotate(180deg)}
+
+/* Orange code block accent border */
+pre,.pre:not(.tb){border-left:3px solid #F4511E !important}
+
+/* Animated orange badge for new/featured posts */
+.nxBadge{display:inline-flex;align-items:center;padding:2px 10px;font-size:11px;font-weight:600;border-radius:20px;background:linear-gradient(135deg,#F4511E,#FF7043);color:#fff;letter-spacing:.03em;animation:nxBadgePulse 2.5s ease infinite}
+@keyframes nxBadgePulse{0%,100%{opacity:1}50%{opacity:.75}}
+
+/* =====================================================
+   NEXORA ORANGE EXTRAS — Extra Features v2.0
+   ===================================================== */
+
+/* Orange highlight on selected text */
+::selection{color:#fff;background:#F4511E}
+
+/* Orange focus rings (accessibility) */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid #F4511E;outline-offset:3px;border-radius:3px}
+
+/* Sticky article sidebar CTA strip */
+.nxReadBanner{background:linear-gradient(135deg,#ff5f0f,#ff9953);border-left:4px solid #F4511E;border-radius:0 10px 10px 0;padding:14px 18px;margin:2em 0;font-size:14px;line-height:1.6}
+.nxReadBanner strong{color:#BF360C;display:block;margin-bottom:4px}
+
+/* Article estimated word count display */
+.nxWordCount{display:inline-flex;align-items:center;gap:4px;font-size:12px;opacity:.65;background:rgba(244,81,30,.07);padding:3px 10px;border-radius:20px;margin-left:6px}
+
+/* Internal link underline decoration - helps SEO engagement */
+.pEnt a:not([href*="//"]){color:#F4511E;text-decoration:underline;text-decoration-color:rgba(244,81,30,.35);text-underline-offset:2px}
+.pEnt a:not([href*="//"]){transition:text-decoration-color .15s ease}
+.pEnt a:not([href*="//"]){text-decoration-color:rgba(244,81,30,.35)}
+
+/* Orange quote blockquote */
+.pEnt blockquote{border-left:4px solid #F4511E;background:#FFF5F0;border-radius:0 10px 10px 0;padding:16px 20px;margin:1.5em 0;font-style:italic;color:#000000}
+.pEnt blockquote::before{content:'\201C';font-size:3rem;color:#F4511E;opacity:.3;line-height:0;vertical-align:-1.2rem;margin-right:4px}
+
+/* Tag cloud orange hover */
+.widget.Label .label-size-1,.widget.Label .label-size-2,.widget.Label .label-size-3,.widget.Label .label-size-4,.widget.Label .label-size-5{transition:color .15s,background .15s}
+.widget.Label a:hover{color:#F4511E !important}
+
+/* Orange highlight utility class for authors to use in posts */
+.nx-highlight{background:linear-gradient(120deg,rgba(244,81,30,.15) 0%,rgba(255,112,67,.2) 100%);padding:0 4px;border-radius:3px}
+
+/* Category pill on post cards */
+.pLbls a{transition:background .2s,transform .1s}
+.pLbls a:hover{transform:scale(1.04)}
+
+/* Smooth image zoom on card hover */
+.pThmb .thmb img{transition:transform .4s cubic-bezier(.25,.46,.45,.94)}
+.pThmb:hover .thmb img{transform:scale(1.05)}
+
+/* Orange-tinted "New Post" ribbon */
+.nxNewRibbon{position:absolute;top:12px;left:-4px;background:#F4511E;color:#fff;font-size:10px;font-weight:700;padding:3px 10px 3px 8px;border-radius:0 3px 3px 0;letter-spacing:.04em;text-transform:uppercase;box-shadow:2px 2px 6px rgba(244,81,30,.3)}
+.nxNewRibbon::before{content:'';position:absolute;left:0;bottom:-4px;border:2px solid transparent;border-top-color:#BF360C;border-right-color:#BF360C}
+
+/* Pagination hover - orange */
+.blogPg a:hover,.toTopF:hover{background:#F4511E !important;color:#fff !important}
+
+/* Footer link hover */
+footer a:hover{color:#F4511E}
+
+/* Article copy code button */
+.nxCopyBtn{position:absolute;top:8px;right:8px;padding:3px 10px;font-size:11px;background:#F4511E;color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity .2s;z-index:2}
+.nxCopyBtn:hover{opacity:.85}
+.nxCopyBtn.copied{background:#4CAF50}
+.pre{position:relative}
+
+/* Orange widget title underline */
+.widget .title.dt::after{background:#F4511E !important}
+
+/* Soft orange card borders on hover */
+.onIndx .blogPts > article:hover{border-color:rgba(244,81,30,.18) !important}
+
+
+/* ====================================================
+   AUTHOR BOX — flat full-width design
+   ==================================================== */
+.admAbt{margin:36px 0 8px;padding:24px 26px;background:#FFF8F5;border:1.5px solid rgba(244,81,30,.15);border-radius:14px}
+.admAbt .title.dt{font-size:11px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#F4511E;margin-bottom:16px;display:flex;align-items:center;gap:10px}
+.admAbt .title.dt::after{content:'';flex:1;height:1px;background:rgba(244,81,30,.15)}
+.admPs{display:flex;align-items:center;gap:16px;margin:0;padding:0;background:transparent;border-radius:0;box-shadow:none;max-width:100%}
+.admIm{flex-shrink:0}
+.admIm .im{width:64px;height:64px;border-radius:50%;border:2px solid rgba(244,81,30,.2)}
+.admI{flex-grow:1;min-width:0}
+.admN::before{content:attr(data-write) " ";font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.8px;opacity:.55;display:block;margin-bottom:2px}
+.admN::after{content:attr(data-text);display:block;font-size:1.05rem;font-weight:700;color:var(--headC)}
+.admA{margin:6px 0 0;font-size:.88rem;color:var(--bodyC);line-height:1.6;opacity:.85}
+.admSocial{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.admSocial a{display:inline-flex;align-items:center;font-size:12px;color:#F4511E;background:rgba(244,81,30,.07);padding:4px 12px;border-radius:20px;text-decoration:none;border:1px solid rgba(244,81,30,.18);transition:all .2s}
+.admSocial a:hover{background:rgba(244,81,30,.14)}
+@media(max-width:500px){.admPs{flex-direction:column;align-items:flex-start;gap:12px}.admIm .im{width:52px;height:52px}.admAbt{padding:18px 16px}}
+
+/* ====================================================
+   INLINE TABLE OF CONTENTS
+   ==================================================== */
+#autoToc:not(:empty){display:block;margin:0 0 30px;background:#FFF8F5;border:1.5px solid rgba(244,81,30,.18);border-radius:12px;overflow:hidden}
+#autoToc:empty{display:none}
+.nx-toc-title{padding:11px 18px 10px;font-size:11px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;color:#F4511E;border-bottom:1px solid rgba(244,81,30,.12);background:rgba(244,81,30,.04)}
+#autoToc ol,#autoToc ul{margin:0;padding:12px 20px 14px 36px;list-style:decimal}
+#autoToc li{margin:5px 0;line-height:1.5}
+#autoToc a{color:#2d1a00;font-size:.875rem;text-decoration:none;transition:color .15s}
+#autoToc a:hover{color:#F4511E}
+#autoToc ol ol{padding-left:20px;list-style:lower-alpha;margin:4px 0}
+#autoToc ol ol a{font-size:.83rem;opacity:.8}
+#autoToc button{display:none!important}
+
+/* ====================================================
+   YOUTUBE SUBSCRIBE BANNER
+   ==================================================== */
+.nxYtBanner{display:flex;align-items:center;gap:16px;margin:32px 0;padding:20px 24px;background:linear-gradient(135deg,#ff0000 0%,#cc0000 100%);border-radius:14px;box-shadow:0 6px 24px rgba(255,0,0,.2);text-decoration:none;color:#fff;transition:transform .2s,box-shadow .2s}
+.nxYtBanner:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(255,0,0,.3);opacity:1}
+.nxYtBanner svg{flex-shrink:0;width:44px;height:44px;fill:#fff}
+.nxYtBanner .nxYtTxt{flex-grow:1}
+.nxYtBanner .nxYtTxt strong{display:block;font-size:1rem;font-weight:700}
+.nxYtBanner .nxYtTxt span{font-size:.82rem;opacity:.88;margin-top:2px;display:block}
+.nxYtBanner .nxYtBtn{flex-shrink:0;background:#fff;color:#cc0000;font-size:13px;font-weight:700;padding:9px 20px;border-radius:24px;white-space:nowrap}
+@media(max-width:600px){.nxYtBanner{flex-wrap:wrap;gap:12px}.nxYtBanner .nxYtBtn{width:100%;text-align:center;padding:10px}}
+
+/* ====================================================
+   COPY CODE BUTTON
+   ==================================================== */
+.nxCopyBtn{position:absolute;top:8px;right:8px;padding:3px 10px;font-size:11px;background:#F4511E;color:#fff;border:none;border-radius:6px;cursor:pointer;font-family:inherit;transition:opacity .2s;z-index:2}
+.nxCopyBtn:hover{opacity:.85}
+.nxCopyBtn.copied{background:#4CAF50}
